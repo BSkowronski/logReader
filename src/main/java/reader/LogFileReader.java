@@ -1,4 +1,4 @@
-package main.java.logreader;
+package main.java.reader;
 
 import main.java.exceptions.DirectoryNotFoundException;
 import java.io.File;
@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class Reader {
+public class LogFileReader implements Reader{
     public List<File> readFilesFromDirectory(String directory) {
         File file = new File(directory);
         if (!file.exists()){
