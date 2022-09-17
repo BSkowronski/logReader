@@ -1,4 +1,4 @@
-package main.java.domain;
+package main.domain;
 
 public enum Severity {
     INFO,DEBUG,ERROR,FATAL

@@ -1,18 +1,19 @@
-package main.java.reader;
+package main.reader;
 
-import main.java.exceptions.DirectoryNotFoundException;
+import main.exceptions.DirectoryNotFoundException;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
-public class LogFileReader implements Reader{
+public class LogFileReader implements Reader {
     public List<File> readFilesFromDirectory(String directory) {
         File file = new File(directory);
-        if (!file.exists()){
+        if (!file.exists()) {
             throw new DirectoryNotFoundException("Directory not found");
         } else {
-            return sortFilesInOrderLastModifiedDescending(Arrays.asList(file.listFiles((dir, name) -> name.endsWith(".log"))));
+            return sortFilesInOrderLastModifiedDescending(Arrays.asList(Objects.requireNonNull(file.listFiles((dir, name) -> name.endsWith(".log")))));
         }
     }
 

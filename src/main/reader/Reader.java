@@ -1,4 +1,4 @@
-package main.java.reader;
+package main.reader;
 
 import java.io.File;
 import java.util.List;

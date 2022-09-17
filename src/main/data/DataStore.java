@@ -1,9 +1,11 @@
-package main.java.data;
+package main.data;
 
-import main.java.domain.Log;
+import main.domain.Log;
 
 import java.util.List;
 
 public interface DataStore {
     List<Log> getLogList();
+
+    Long getReadingFileTime();
 }
